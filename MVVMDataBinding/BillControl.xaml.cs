@@ -15,31 +15,31 @@ using CashRegister;
 namespace MVVMDataBinding
 {
     /// <summary>
-    /// Interaction logic for CoinControl.xaml
+    /// Interaction logic for BillControl.xaml
     /// </summary>
-    public partial class CoinControl : UserControl
+    public partial class BillControl : UserControl
     {
-        public CoinControl()
+        public BillControl()
         {
             InitializeComponent();
         }
-                
+
         // Using a DependencyProperty as the backing store for the Denomination Property.  
         //This enables animation, styling, binding, etc...
         public static readonly DependencyProperty DenominationProperty =
         DependencyProperty.Register(
             "Denomination",                     // The name of the property
-            typeof(Coins),                      // The type of the property
-            typeof(CoinControl),                // The property's control
-            new PropertyMetadata(Coins.Penny)   // The Property Medata
+            typeof(Bills),                      // The type of the property
+            typeof(BillControl),                // The property's control
+            new PropertyMetadata(Bills.One)   // The Property Medata
             );
 
         /// <summary>
-        /// The denomination of the coin
+        /// The denomination of the bill
         /// </summary>
-        public Coins Denomination
+        public Bills Denomination
         {
-            get { return (Coins)GetValue(DenominationProperty); }
+            get { return (Bills)GetValue(DenominationProperty); }
             set { SetValue(DenominationProperty, value); }
         }
 
@@ -51,7 +51,7 @@ namespace MVVMDataBinding
                 DependencyProperty.Register(
                     "Quantity",
                     typeof(int),
-                    typeof(CoinControl),
+                    typeof(BillControl),
                     new FrameworkPropertyMetadata(
                         0,
                         FrameworkPropertyMetadataOptions.BindsTwoWayByDefault
@@ -59,7 +59,7 @@ namespace MVVMDataBinding
                 );
 
         /// <summary>
-        /// The quantity of the coin denomination
+        /// The quantity of the bill denomination
         /// </summary>
         public int Quantity
         {
@@ -68,9 +68,9 @@ namespace MVVMDataBinding
         }
 
         /// <summary>
-        /// Increases the quantity of the bound coinage by one
+        /// Increases the quantity of the bound bill by one
         /// </summary>
-        /// <param name="sender">The coinage quanity (as an int)</param>
+        /// <param name="sender">The bill quanity (as an int)</param>
         /// <param name="args">The event args</param>
         public void OnIncreaseClicked(object sender, RoutedEventArgs args)
         {
@@ -78,9 +78,9 @@ namespace MVVMDataBinding
         }
 
         /// <summary>
-        /// Decreases the quantity of the bound coinage by one
+        /// Decreases the quantity of the bound bill by one
         /// </summary>
-        /// <param name="sender">The coinage quantity (as in int)</param>
+        /// <param name="sender">The bill quantity (as in int)</param>
         /// <param name="args">The event args</param>
         public void OnDecreaseClicked(object sender, RoutedEventArgs args)
         {
