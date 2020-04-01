@@ -18,7 +18,7 @@
                 <ColumnDefinition Width="4*"/>
                 <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
-            <Border Grid.Column="1" BorderThickness="1" BorderBrush="Goldenrod" CornerRadius="50" Background="Gold" Margin="-8 0">
+            <Border Grid.Column="1" BorderThickness="1" BorderBrush="DarkGreen" Height="50" Width="70" Background="LightGreen" Margin="-18 0">
                 <TextBlock Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:BillControl}}, Path=Denomination}" 
                            Foreground="Goldenrod" TextAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
             </Border>
